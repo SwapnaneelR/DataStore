@@ -1,5 +1,5 @@
 {
-  "name": "datastore",
+  "name": "@swapnaneelr/data-store",
   "version": "1.0.0",
   "description": "Data Store Implementation in JS",
   "main": "index.js",
