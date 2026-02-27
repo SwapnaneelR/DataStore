@@ -1,22 +1,53 @@
 {
   "name": "@swapnaneelr/data-store",
   "version": "1.0.0",
-  "description": "Data Store Implementation in JS",
-  "main": "index.js",
+  "description": "Composable persistent, transient, and secure data stores for Node.js",
+  "main": "index.cjs",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    },
+    "./store": "./store.cjs",
+    "./storeConfig": "./storeConfig.cjs",
+    "./persistent": "./persistentStore.cjs",
+    "./transient": "./transientStore.cjs",
+    "./secure": "./secureStore.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "store.cjs",
+    "storeConfig.cjs",
+    "persistentStore.cjs",
+    "transientStore.cjs",
+    "secureStore.cjs",
+    "readme.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -e \"require('./index.cjs')\"",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SwapnaneelR/DataStore.git"
   },
   "keywords": [
-    "cache", "javascript"
+    "cache",
+    "storage",
+    "node",
+    "keytar",
+    "node-persist"
   ],
   "author": "Swapnaneel Ray",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SwapnaneelR/DataStore/issues"
   },
-  "homepage": "https://github.com/SwapnaneelR/DataStore#readme"
+  "homepage": "https://github.com/SwapnaneelR/DataStore#readme",
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "node-cache": "^5.1.2",
+    "node-persist": "^4.0.4"
+  }
 }
